@@ -1,0 +1,21 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "Node.js tutorial Repo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./basics/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samueladdisu/Node.js.git"
+  },
+  "keywords": [],
+  "author": "Samuel Addisu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samueladdisu/Node.js/issues"
+  },
+  "homepage": "https://github.com/samueladdisu/Node.js#readme"
+}
