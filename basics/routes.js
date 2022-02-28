@@ -4,7 +4,7 @@ const fs = require('fs')
 const requestHandler = (req, res) => {
   const url = req.url
   const method = req.method
-  if(url === '/'){
+  if (url === '/') {
     res.write('<html>');
     res.write('<head><title> Enter Message</title></head>')
     res.write('<body><form action="/message" method="POST"> <input type="text" name="message"> <button type="submit">Send</button></form></body')
@@ -12,7 +12,7 @@ const requestHandler = (req, res) => {
     return res.end()
   }
 
-  if(url === '/message' && method === 'POST'){
+  if (url === '/message' && method === 'POST') {
     const body = []
     req.on('data', (chunk) => {
       console.log('chunk', chunk);
@@ -24,13 +24,13 @@ const requestHandler = (req, res) => {
       console.log(parsedBody);
       const message = parsedBody.split('=')[1]
       // fs.writeFileSync('message.txt', message)
-      fs.writeFile('message.txt', message, (err) =>{
+      fs.writeFile('message.txt', message, (err) => {
         res.statusCode = 302
         res.setHeader('Location', '/')
         return res.end()
-         
+
       })
-     
+
     })
   }
 
